@@ -1,0 +1,58 @@
+/* Crossword grid styles */
+.crossword-grid {
+    display: grid;
+    grid-template-columns: repeat(10, 30px);
+    grid-template-rows: repeat(10, 30px);
+    gap: 2px;
+}
+
+.crossword-grid .cell {
+    background-color: #f7f7f7;
+    border: 1px solid #ddd;
+    padding: 5px;
+    text-align: center;
+}
+
+/* Questions styles */
+.questions-container {
+    margin-top: 20px;
+}
+
+.question {
+    margin-bottom: 20px;
+}
+
+.question ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.question li {
+    margin-bottom: 10px;
+}
+
+.question input[type="radio"] {
+    margin-right: 10px;
+}
+
+#next-btn{
+    background-color: rgb(17, 173, 17);
+}
+
+#back-btn{
+    background-color: rgb(194, 26, 180);
+}
+
+#quiz{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.isTurn{
+    display: block;
+}
+.isNotTurn{
+    display: none !important;
+}

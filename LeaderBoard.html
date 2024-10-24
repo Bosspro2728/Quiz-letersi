@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="particles-js">
+    <style>
+        table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+    </style>
+    <nav class="zone sticky">
+        <ul class = "main-nev">
+            <li class="pull"><a href="QRcode.html">QR Code</a></li>
+            <li><a href="index.html">Quiz</a></li>
+            <li class="push"><a href="LeaderBoard.html">Leader Board</a></li>
+        </ul>
+    </nav>
+    <div id="start">
+        <table id="leaderBoard">
+            <tr>
+                <th>Username</th><th>Score</th><th>Time Joined</th>
+            </tr>
+        </table>
+    </div>
+    
+<script src="particles.js"></script>
+<script src="app.js"></script>
+<script src="getLeaderBoard.js"></script>
+</body>
+</html>

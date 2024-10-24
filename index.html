@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="quiz.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="particles-js">
+    <nav class="zone sticky">
+        <ul class = "main-nev">
+            <li class="pull"><a href="QRcode.html">QR Code</a></li>
+            <li><a href="index.html">Quiz</a></li>
+            <li class="push"><a href="LeaderBoard.html">Leader Board</a></li>
+        </ul>
+    </nav>
+    <div id="start" class="isTurn">
+        <h1>Start Quiz</h1>
+        <button id="start-btn">Start</button>
+    </div>
+    <div id="quiz" class="isNotTurn">
+        <!-- Crossword container -->
+        <div id="crossword" class="crossword-container isTurn">
+            <div class="crossword-grid">
+            <!-- Grid cells will be generated dynamically -->
+            </div>
+            <button id="next-btn" onclick="nextQuestion(0)">Next</button>
+        </div>
+        
+        <!-- Questions container -->
+        <div class="questions-container">
+            <div class="question isNotTurn">
+                <h2>Question 1</h2>
+                <ul>
+                    <li><input type="radio" id="q1-a" name="q1"><label for="q1-a">Alternative 1</label></li>
+                    <li><input type="radio" id="q1-b" name="q1"><label for="q1-b">Alternative 2</label></li>
+                    <li><input type="radio" id="q1-c" name="q1"><label for="q1-c">Alternative 3</label></li>
+                    <li><input type="radio" id="q1-d" name="q1"><label for="q1-d">Alternative 4</label></li>
+                </ul>
+                <button id="next-btn" onclick="nextQuestion(1)">Next</button>
+                <button id="back-btn" onclick="backQuestion(0)">Back</button>
+            </div>
+            <div class="question isNotTurn">
+                <h2>Question 2</h2>
+                <ul>
+                    <li><input type="radio" id="q2-a" name="q2"><label for="q2-a">Alternative 1</label></li>
+                    <li><input type="radio" id="q2-b" name="q2"><label for="q2-b">Alternative 2</label></li>
+                    <li><input type="radio" id="q2-c" name="q2"><label for="q2-c">Alternative 3</label></li>
+                    <li><input type="radio" id="q2-d" name="q2"><label for="q2-d">Alternative 4</label></li>
+                </ul>
+                <button id="next-btn" onclick="nextQuestion(2)">Next</button>
+                <button id="back-btn" onclick="backQuestion(1)">Back</button>
+            </div>
+            <div class="question isNotTurn">
+                <h2>Question 3</h2>
+                <ul>
+                    <li><input type="radio" id="q3-a" name="q3"><label for="q3-a">Alternative 1</label></li>
+                    <li><input type="radio" id="q3-b" name="q3"><label for="q3-b">Alternative 2</label></li>
+                    <li><input type="radio" id="q3-c" name="q3"><label for="q3-c">Alternative 3</label></li>
+                    <li><input type="radio" id="q3-d" name="q3"><label for="q3-d">Alternative 4</label></li>
+                </ul>
+                <button id="back-btn" onclick="backQuestion(2)">Back</button>
+                <button id="submit">Submit</button>
+            </div>
+        </div>
+    </div>
+  <script src="particles.js"></script>
+  <script src="app.js"></script>
+  <script src="quiz.js"></script>
+  <script src="handleFetchSubmition.js"></script>
+</body>
+</html>
