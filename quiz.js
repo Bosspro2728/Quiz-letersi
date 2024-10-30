@@ -1,18 +1,21 @@
-// Crossword grid generation
 const crosswordGrid = document.querySelector('.crossword-grid');
-const gridSize = 10;
+const gridSize = 20;
 const start_button = document.getElementById('start-btn');
 const quiz = document.getElementById('quiz');
 const StartDiv = document.getElementById('start');
 const NextButton = document.getElementById('next-btn');
 const questionElements = document.querySelectorAll('.question');
 const CrosswordDiv = document.getElementById('crossword');
-
+var username;
 start_button.addEventListener('click', () => {
+  username = prompt("Enter your name");
+  if(username){
+    console.log(username);
     quiz.classList.remove('isNotTurn');
     quiz.classList.add('isTurn');
     StartDiv.classList.remove('isTurn');
     StartDiv.classList.add('isNotTurn');
+  };
 });
 
 const nextQuestion = (question_number) => {
@@ -47,36 +50,43 @@ const backQuestion = (question_number) => {
 
 for (let i = 0; i < gridSize; i++) {
   for (let j = 0; j < gridSize; j++) {
-    const cell = document.createElement('input');
-    cell.classList.add('cell');
+    const cell = document.createElement('input'); 
     cell.id = `${i}${j}`;
+    switch (cell.id) {
+      case '02':
+        cell.value = '1V';
+        cell.readOnly = true;
+        break;
+      case '06':
+        cell.value = '2V';
+        cell.readOnly = true;
+        break;
+      case '35':
+        cell.value = '2H';
+        cell.readOnly = true;
+        break;
+      case '71':
+        cell.value = '1H';
+        cell.readOnly = true;
+        break;
+    }
+    if (emptySquares.includes(cell.id)) {
+      cell.setAttribute('maxlength', '1');
+      cell.readOnly = false;
+    }
+    else {
+      cell.readOnly = true;
+      cell.style.backgroundColor = 'black';
+      cell.style.color ="red";
+    }
+    
+    cell.classList.add('cell');
     crosswordGrid.appendChild(cell);
   }
 }
 
+
 // Question logic
-const questions = [
-  {
-    question: 'Kur u mbajt Kongresi i Manastirit?',
-    alternatives: ['1555', '1908', '1972', '1909'],
-    correctAnswer: 1
-  },
-  {
-    question: 'Kush ishte kryetari i Kongresit te Manastirit?',
-    alternatives: ['Naim Frashri', 'Sami Frashri', 'Gjergj Fishta', 'Luigj Gurakuqi'],
-    correctAnswer: 2
-  },
-  {
-    question: 'Cili ishte qëllimi i Kongrestit të Drejtshkrimit?',
-    alternatives: [
-        'Përcaktimi i një gjuhe standarde shqipe duke përdorur toskërishten letrare', 
-        'Krijimi i një ure lidhese midis toskërishtes dhe gegërishtes', 
-        'Krijimi i një alfabeti të ri mbi bazën e atij latin', 
-        'Krijimi i nje fjalori standard shqip'
-    ],
-    correctAnswer: 0
-  }
-];
 
 questions.forEach((question, index) => {
   const questionElement = questionElements[index];

@@ -21,11 +21,28 @@
     </div>
     <div id="quiz" class="isNotTurn">
         <!-- Crossword container -->
-        <div id="crossword" class="crossword-container isTurn">
-            <div class="crossword-grid">
+        <div id="crossword" class="isTurn ">
+          <div class="crossword-container">
+             <div class="crossword-grid">
             <!-- Grid cells will be generated dynamically -->
             </div>
-            <button id="next-btn" onclick="nextQuestion(0)">Next</button>
+            <div class="crossword-clues">
+              <div>
+                <h2>Horizontal:</h2>
+                <ul>
+                  <li>1H autori i dytë që na la dokumentin “Fjalorth shqip-gjermanisht" të shkruar më 1497.  ishte një kalorës  Gjermani. </li>
+                  <li>2H Autori I  dokumentit te parë ku përmendet shkrimi shqip vjen nga dokumenti kishtar katolik i vitit 1332</li>
+                </ul>
+              </div>
+              <div>
+                <h2>Vertical:</h2>
+                <ul>
+                  <li>1V. Ajo i përket vitit 1462 dhe është një fjali e shkurtër në mes të një shkrimi latinisht. Autori  Kryepeshkopi i Durrësit, Pal Engjëlli.</li>
+                  <li>2V është dokumenti i tretë i shqipes së shkruar. Ai i përket fundit të shekullit XV ose fillimit të shekullit XVI</li>
+                </ul>
+              </div><button style="margin: 5%;" id="next-btn" onclick="nextQuestion(0)">Next</button>
+            </div>
+          </div>
         </div>
         
         <!-- Questions container -->
@@ -33,10 +50,10 @@
             <div class="question isNotTurn">
                 <h2>Question 1</h2>
                 <ul>
-                    <li><input type="radio" id="q1-a" name="q1"><label for="q1-a">Alternative 1</label></li>
-                    <li><input type="radio" id="q1-b" name="q1"><label for="q1-b">Alternative 2</label></li>
-                    <li><input type="radio" id="q1-c" name="q1"><label for="q1-c">Alternative 3</label></li>
-                    <li><input type="radio" id="q1-d" name="q1"><label for="q1-d">Alternative 4</label></li>
+                    <li><input type="radio" id="q1-a" name="q1" value="0"><label for="q1-a">Alternative 1</label></li>
+                    <li><input type="radio" id="q1-b" name="q1" value="1"><label for="q1-b">Alternative 2</label></li>
+                    <li><input type="radio" id="q1-c" name="q1" value="2"><label for="q1-c">Alternative 3</label></li>
+                    <li><input type="radio" id="q1-d" name="q1" value="3"><label for="q1-d">Alternative 4</label></li>
                 </ul>
                 <button id="next-btn" onclick="nextQuestion(1)">Next</button>
                 <button id="back-btn" onclick="backQuestion(0)">Back</button>
@@ -44,10 +61,10 @@
             <div class="question isNotTurn">
                 <h2>Question 2</h2>
                 <ul>
-                    <li><input type="radio" id="q2-a" name="q2"><label for="q2-a">Alternative 1</label></li>
-                    <li><input type="radio" id="q2-b" name="q2"><label for="q2-b">Alternative 2</label></li>
-                    <li><input type="radio" id="q2-c" name="q2"><label for="q2-c">Alternative 3</label></li>
-                    <li><input type="radio" id="q2-d" name="q2"><label for="q2-d">Alternative 4</label></li>
+                    <li><input type="radio" id="q2-a" name="q2" value="0"><label for="q2-a">Alternative 1</label></li>
+                    <li><input type="radio" id="q2-b" name="q2" value="1"><label for="q2-b">Alternative 2</label></li>
+                    <li><input type="radio" id="q2-c" name="q2" value="2"><label for="q2-c">Alternative 3</label></li>
+                    <li><input type="radio" id="q2-d" name="q2" value="3"><label for="q2-d">Alternative 4</label></li>
                 </ul>
                 <button id="next-btn" onclick="nextQuestion(2)">Next</button>
                 <button id="back-btn" onclick="backQuestion(1)">Back</button>
@@ -55,10 +72,10 @@
             <div class="question isNotTurn">
                 <h2>Question 3</h2>
                 <ul>
-                    <li><input type="radio" id="q3-a" name="q3"><label for="q3-a">Alternative 1</label></li>
-                    <li><input type="radio" id="q3-b" name="q3"><label for="q3-b">Alternative 2</label></li>
-                    <li><input type="radio" id="q3-c" name="q3"><label for="q3-c">Alternative 3</label></li>
-                    <li><input type="radio" id="q3-d" name="q3"><label for="q3-d">Alternative 4</label></li>
+                    <li><input type="radio" id="q3-a" name="q3" value="0"><label for="q3-a">Alternative 1</label></li>
+                    <li><input type="radio" id="q3-b" name="q3" value="1"><label for="q3-b">Alternative 2</label></li>
+                    <li><input type="radio" id="q3-c" name="q3" value="2"><label for="q3-c">Alternative 3</label></li>
+                    <li><input type="radio" id="q3-d" name="q3" value="3"><label for="q3-d">Alternative 4</label></li>
                 </ul>
                 <button id="back-btn" onclick="backQuestion(2)">Back</button>
                 <button id="submit">Submit</button>
@@ -67,6 +84,58 @@
     </div>
   <script src="particles.js"></script>
   <script src="app.js"></script>
+  <script>var score = 0;</script>
+  <script>
+  const crossword1 = [
+  {
+    answer: ['A', 'R', 'N', 'O', 'L', 'D', '', 'V', 'O', 'N', '', 'H', 'A', 'R', 'F', 'I'],
+    letters: ['72', '73', '74', '75', '76', '77', '78', '79', '710', '711', '712', '713', '714', '715', '716', '717', '718', '719'],
+    points : 16,
+  },
+  {
+    answer: ['U', 'N', 'G', 'J', 'I', 'L', 'L', 'I', '', 'I', '', 'P', 'A', 'S', 'H', 'K', 'E', 'V', 'E'],
+    letters: ['16', '26', '36', '46', '56', '66', '76', '86', '96', '106', '116', '126', '136', '146', '156', '166', '176', '186', '196'],
+    points: 19,
+  },
+  {
+    answer: ['F', 'O', 'R', 'M', 'U', 'L', 'A', '', 'E', '', 'P', 'A', 'G', 'E', 'Z', 'I', 'M', 'I', 'T'],
+    letters: ['12', '22', '32', '42', '52', '62', '72', '82', '92', '102', '112', '122', '132', '142', '152', '162', '172', '182', '192'],
+    points : 19,
+  },
+  {
+    answer: ['G', 'U', 'L', 'I', 'E', 'M', '', 'A', 'D', 'A', 'M'],
+    letters: ['36', '37', '38', '39', '310', '311', '312', '313', '314', '315', '316'],
+    points : 11,
+  },
+]
+  window.crossword1 = crossword1;
+const emptySquares = ['12', '22', '32', '42', '52', '62', '72', '82', '92', '102', '112', '122', '132', '142', '152', '162', '172', '182', '192', '16', '26', '36', '46', '56', '66', '76', '86', '96', '106', '116', '126', '136', '146', '156', '166', '176', '186', '196', '72', '73', '74', '75', '76', '77', '78', '79', '710', '711', '712', '713', '714', '715', '716', '717', '36', '37', '38', '39', '310', '311', '312', '313', '314', '315','316']
+const questions = [
+  {
+    question: 'Kur u mbajt Kongresi i Manastirit?',
+    alternatives: ['1555', '1908', '1972', '1909'],
+    correctAnswer: 1,
+    points : 1
+  },
+  {
+    question: 'Kush ishte kryetari i Kongresit te Manastirit?',
+    alternatives: ['Naim Frashri', 'Sami Frashri', 'Gjergj Fishta', 'Luigj Gurakuqi'],
+    correctAnswer: 2,
+    points: 1
+  },
+  {
+    question: 'Cili ishte qëllimi i Kongrestit të Drejtshkrimit?',
+    alternatives: [
+        'Përcaktimi i një gjuhe standarde shqipe duke përdorur toskërishten letrare', 
+        'Krijimi i një ure lidhese midis toskërishtes dhe gegërishtes', 
+        'Krijimi i një alfabeti të ri mbi bazën e atij latin', 
+        'Krijimi i nje fjalori standard shqip'
+    ],
+    correctAnswer: 0,
+    points: 1
+  }
+];
+</script>
   <script src="quiz.js"></script>
   <script src="handleFetchSubmition.js"></script>
 </body>

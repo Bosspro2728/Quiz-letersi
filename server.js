@@ -31,6 +31,10 @@ app.get('/leaderboard-data', (req, res) => {
     leaderBoard.handleLeaderBoard(req, res, db)
 })
 
+app.get('/user-score', (req, res) => {
+    leaderBoard.getScore(req, res, db)
+})
+
 
 app.listen(process.env.PORT, () => {
   console.log(`Example app listening on port ${process.env.PORT}`)
