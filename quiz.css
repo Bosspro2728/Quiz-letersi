@@ -26,12 +26,12 @@
     .crossword-container{
         flex-direction: column;
     }
-    .crossword-grid {
+    /* .crossword-grid {
         display: grid;
         grid-template-columns: repeat(20, 15px);
         grid-template-rows: repeat(20, 15px);
         gap: 2px;
-    }
+    } */
     #crossword{
         max-height: 100%;
     }
