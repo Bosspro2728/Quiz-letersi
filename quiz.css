@@ -22,13 +22,15 @@
     max-height: 100%;
     width: 90vw;
 }
+@media screen and (max-width:  700px) {
+    .crossword-grid {
+        grid-template-columns: repeat(20, 15px);
+        grid-template-rows: repeat(20, 15px);
+    }
+}
 @media screen and (max-width:  1000px) {
     .crossword-container{
         flex-direction: column;
-    }
-    .crossword-grid {
-        grid-template-columns: repeat(20, 25px);
-        grid-template-rows: repeat(20, 25px);
     }
     #crossword{
         max-height: 100%;
